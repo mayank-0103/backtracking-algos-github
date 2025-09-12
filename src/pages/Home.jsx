@@ -218,6 +218,62 @@ const algos = [
             </table>
         </>,
     ],
+    [
+        5,
+        "N-Queens Problem",
+        "n-queens",
+        <>O(N!)</>,
+        <>
+            <p>
+                The N-Queens problem asks how to place N queens on an N×N chessboard so that no two queens threaten each
+                other (i.e., no two share the same row, column, or diagonal). The standard algorithm is{" "}
+                <b>backtracking</b>, which incrementally places queens column by column, checking validity at each step,
+                and backtracking when conflicts arise. This guarantees finding a solution if one exists, though the
+                search space grows rapidly as N increases.
+            </p>
+
+            <table className={styles.islandTable}>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Analysis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Time Complexity</strong>
+                        </td>
+                        <td>
+                            The worst-case time complexity is <code>O(N!)</code>.
+                            <br />
+                            For the first column, N choices exist; for the next, at most N-1 remain, and so on.
+                            <br />
+                            Backtracking prunes many invalid states early (due to diagonal/row/column checks), but in
+                            the worst case the search tree still scales factorially.
+                            <br />
+                            For practical values of N (≤15), backtracking with pruning is efficient enough.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Space Complexity</strong>
+                        </td>
+                        <td>
+                            The space complexity is <code>O(N)</code> for the recursion stack depth, since one queen is
+                            placed per column.
+                            <br />
+                            An additional <code>O(N)</code> space is used to store queen positions (the{" "}
+                            <code>array</code> tracking rows by column).
+                            <br />
+                            The chessboard matrix in this React version is <code>O(N²)</code>, used only for display
+                            purposes, not essential to the algorithm.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </>,
+    ],
 ];
 
 const Home = () => {

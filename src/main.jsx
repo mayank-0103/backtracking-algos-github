@@ -7,6 +7,7 @@ import LargestIsland from "./pages/LargestIsland.jsx";
 import PathFinder from "./pages/PathFinder.jsx";
 import Permutations from "./pages/Permutations.jsx";
 import SudokuSolver from "./pages/SudokuSolver.jsx";
+import Nqueens_problem from "./pages/Nqueens_problem.jsx";
 
 //! Creating router for our chat application
 const routerMine = createBrowserRouter([
@@ -34,6 +35,10 @@ const routerMine = createBrowserRouter([
                 path: "/sudoku-solver",
                 element: <SudokuSolver />,
             },
+            {
+                path: "/n-queens",
+                element: <Nqueens_problem/>
+            }
         ],
     },
 ]);
